@@ -1,8 +1,8 @@
+const db = require("./config/db");
 const app = require("./app");
 const logger = require("./config/logger");
-const db = require("./models");
 
-db.sequelize
+db
   .sync()
   .then(() => {
     logger.info("Synced db starting the server...");

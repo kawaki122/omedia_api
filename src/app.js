@@ -1,6 +1,7 @@
 const express = require('express');
 const httpStatus = require('http-status');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const ApiError = require('./utils/ApiError')
 const routes = require('./routes/v1');
 const { errorConverter, errorHandler } = require('./middleware/error');
@@ -9,6 +10,7 @@ const app = express();
 
 // Middleware section
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/v1', routes);
 

@@ -1,12 +1,22 @@
 const express = require('express');
-const userRoute = require('./user.routes');
+const cityRoute = require('./city.routes');
+const clientRoute = require('./client.routes');
+const brandRoute = require('./brand.routes');
 
 const router = express.Router();
 
 const defaultRoutes = [
   {
-    path: '/users',
-    route: userRoute,
+    path: '/cities',
+    route: cityRoute,
+  },
+  {
+    path: '/clients',
+    route: clientRoute,
+  },
+  {
+    path: '/brands',
+    route: brandRoute,
   },
 ];
 

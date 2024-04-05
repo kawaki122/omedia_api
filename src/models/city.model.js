@@ -1,11 +1,8 @@
 const Sequelize = require("sequelize");
+const sequelize = require("../config/db");
 
-module.exports = (sequelize) => {
-  const City = sequelize.define("city", {
-    name: {
-      type: Sequelize.STRING
-    },
-  });
-
-  return City;
-};
+module.exports = sequelize.define("cities", {
+  city: {
+    type: Sequelize.STRING,
+  },
+});
